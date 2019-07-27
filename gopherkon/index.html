@@ -1,0 +1,164 @@
+<meta charset="utf-8">
+
+<style>
+* {
+    font-size: 13px;
+    color: #335d7b;
+    font-family: -apple-system,BlinkMacSystemFont,Roboto,Open Sans,Helvetica Neue,sans-serif;
+    font-weight: 400;
+}
+
+body {
+    background-color: #edeef0;
+    margin: 0;
+}
+
+button {
+    all: unset;
+}
+
+.back {
+    width: 100%;
+    background: #4a76a8;
+    height: 42px;
+    padding-left: 16px;
+    border-bottom: 1px solid #4872a3;
+    margin-bottom: 8px;
+    line-height: 42px;
+}
+
+#selfref {
+    font-size: 16pt;
+    text-decoration: none;
+    color: white !important;
+    font-weight: 600;
+}
+
+.controlref {
+    font-size: 13pt;
+    color: #c0cfe1 !important;
+    padding: 6px;
+    background-color: #224b7a;
+    border-radius: 14px;
+}
+
+#gopher {
+    width: 490px;
+    height: 460px;
+    overflow: hidden;
+    position: relative;
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: 0 1px 0 0 #d7d8db, 0 0 0 1px #e3e4e8;
+}
+
+#option-tabs {
+    width: 342px;
+    height: 444px;
+    border-radius: 4px;
+    box-shadow: 0 1px 0 0 #d7d8db, 0 0 0 1px #e3e4e8;
+    padding: 8px;
+}
+
+#tab-selector {
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: 0 1px 0 0 #d7d8db, 0 0 0 1px #e3e4e8;
+}
+
+.image-layer {
+    position: absolute;
+}
+
+td {
+    padding: 0;
+}
+
+td button {
+    cursor: pointer;
+    text-decoration: none;
+    display: block;
+    padding-left: 18px;
+    line-height: 31px;
+    width: 96px;
+}
+
+td button:hover {
+    background-color: #f0f2f5;
+}
+
+.option-link {
+    display: inline-block;
+    width: 110px;
+    height: auto;
+    cursor: pointer;
+}
+
+.option-link img:hover {
+    background-color: #f0f2f5;
+}
+
+.option-link img {
+    text-decoration: none;
+    width: 110px;
+    height: auto;
+    border-bottom: 1px solid #dfe2e8;
+    background-color: #fff;
+}
+
+.option-tab {
+    display: none;
+    overflow-y: scroll;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+}
+
+.option-selected {
+    background-color: #f0f2f5 !important;
+}
+
+.tab-selected {
+    background-color: #f0f2f5;
+    border-left: 2px solid #5181b8;
+    color: black;
+    font-weight: 500;
+    padding-left: 16px;
+}
+
+</style>
+
+<div class="back">
+    <a id="selfref" href="">Gopher Konstructor</a>
+    <a style="margin-left: 16px" id="download" class="controlref" href="" download="gopher.png">Download PNG</a>
+    <a id="share" class="controlref" title="Copy permalink to clipboard" href="#">Share</a>
+    <a id="shuffle" class="controlref" title="Randomize the gopher appearance" href="#">Shuffle</a>
+    <a class="controlref" title="Produced images are free for any use" href="https://github.com/quasilyte/gopherkon/blob/master/LICENSE">See license</a>
+    <a class="controlref" title="Ask a question / Propose a new feature / Report a bug" href="https://github.com/quasilyte/gopherkon/issues/new">Leave feedback</a>
+</div>
+
+<div style="width: 1100px; height: 490px; margin-left: 16px">
+    <canvas width=490 height=460 style="position: relative; float: left" id="gopher"></canvas>
+
+    <div id="option-tabs" style="float: left">
+        <div id="colorOptionTab" class="option-tab"></div>
+        <div id="eyesOptionTab" class="option-tab"></div>
+        <div id="poseOptionTab" class="option-tab"></div>
+        <div id="torsoOptionTab" class="option-tab"></div>
+        <div id="earsOptionTab" class="option-tab"></div>
+        <div id="noseOptionTab" class="option-tab"></div>
+        <div id="undernoseOptionTab" class="option-tab"></div>
+        <div id="teethOptionTab" class="option-tab"></div>    
+        <div id="mouthOptionTab" class="option-tab"></div>    
+        <div id="accessoryOptionTab" class="option-tab"></div>
+        <div id="extrasOptionTab" class="option-tab"></div>
+        <div id="tattooOptionTab" class="option-tab"></div>
+        <div id="hairOptionTab" class="option-tab"></div>
+    </div>
+
+    <div style="margin-left: 8px; float: left">
+        <table cellspacing="0" id="tab-selector"></table>
+    </div>
+</div>
+
+<script src="app.js"></script>

@@ -1,0 +1,14 @@
+version: '2.3'
+
+
+services:
+  project:
+    runtime:
+      nvidia
+    build:
+      dockerfile: Dockerfile
+      context: .
+    stdin_open: true
+    tty: true
+    volumes:
+      - ./project:/project
